@@ -1,1 +1,1 @@
-![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=sheetung&show_icons=true&theme=dracula)
+![sheetung's GitHub stats](https://github-readme-stats.vercel.app/api?username=sheetung&show_icons=true&bg_color=00000000)
