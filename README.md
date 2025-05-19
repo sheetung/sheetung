@@ -1,10 +1,6 @@
 <h1 align="center">Hi 👋, I'm sheetung</h1>
 <h3 align="center">A graduate student who works overtime everyday</h3>
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=sheetung&label=Profile%20views&color=0e75b6&style=flat" alt="sheetung" /> </p>
-
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=sheetung" alt="sheetung" /></a> </p>
-
 - 🌱 I’m currently learning **c++, ROS**
 
 ### Blogs posts
