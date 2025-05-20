@@ -1,14 +1,36 @@
 name: Latest blog post workflow
 on: 
     schedule:
-        - cron: '0 * * * *'
+        - cron: '0 0 * * 0'  # 每周日的午夜0点触发
 jobs: 
     update-readme-with-blog: 
         name: Update this repo's README with latest blog posts
         runs-on: ubuntu-latest
         steps: 
-            - uses: actions/checkout@v2
-            - uses: gautamkrishnar/blog-post-workflow@master
+            - name: Checkout repository
+              uses: actions/checkout@v2
+
+            - name: Update README with latest blog posts
+              id: update_readme
+              uses: gautamkrishnar/blog-post-workflow@master
               with: 
                 max_post_count: "4"
                 feed_list: "https://moontung.top/feed/"
+
+            - name: Commit changes if any
+              run: |
+                git config --global user.name "github-actions[bot]"
+                git config --global user.email "github-actions[bot]@users.noreply.github.com"
+                if [ -n "$(git status --porcelain)" ]; then
+                  git add README.md
+                  git commit -m "Update README with latest blog posts"
+                  git push
+                else
+                  echo "No changes to commit."
+                fi
+              if: success() && steps.update_readme.outcome == 'success'
+
+            - name: Handle failure
+              if: failure()
+              run: |
+                echo "Failed to update README with latest blog posts. No changes will be committed."
