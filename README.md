@@ -12,5 +12,5 @@
 
 <h3 align="left">Connect with me:
 <p align="left">
-<a href="/https://moontung.top/feed/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/rss.svg" alt="https://moontung.top/feed/" height="30" width="40" /></a>
+<a href="https://blog.moontung.top/index.xml" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/rss.svg" alt="https://blog.moontung.top/index.xml" height="30" width="40" /></a>
 </p></h3>
