@@ -2,8 +2,8 @@ name: Update README with Latest Blog Posts
 
 on:
   schedule:
-    - cron: '0 0 * * 0'  # 每周日午夜运行
-  workflow_dispatch:   # 可以手动触发运行
+    - cron: '0 0 * * 0'  # 每周日凌晨自动运行
+  workflow_dispatch:    # 支持手动触发
 
 jobs:
   update-readme:
@@ -27,13 +27,14 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
           if [ -n "$(git status --porcelain)" ]; then
+            echo "Changes detected. Committing and pushing..."
             git add README.md
             git commit -m "Update README with latest blog posts"
 
-            # 使用 GITHUB_TOKEN 配置远程地址并 push
+            # 带 token 的 git push 方式
             git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
             git push origin HEAD
           else
-            echo "No changes to commit."
+            echo "No changes. Skip commit."
           fi
         if: success() && steps.update_blog.outcome == 'success'
