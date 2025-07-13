@@ -36,7 +36,7 @@ jobs:
 
       - name: Push changes
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SHEETUNG_UPDATE_TOKEN: ${{ secrets.SHEETUNG_UPDATE_TOKEN }}
         run: |
-          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          git remote set-url origin https://x-access-token:${SHEETUNG_UPDATE_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
           git push origin HEAD
