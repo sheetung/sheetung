@@ -8,6 +8,8 @@
 
 ### Blogs posts
 <!-- BLOG-POST-LIST:START -->
+- [GIT使用教程 通关版](https://sheetung.github.io/git_use/)
+- [Hugo：零成本搭建一个带有评论和搜索系统的静态博客](https://sheetung.github.io/build_hugo_blog/)
 <!-- BLOG-POST-LIST:END -->
 
 <h3 align="left">Connect with me:
