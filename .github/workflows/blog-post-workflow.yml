@@ -1,19 +1,18 @@
-name: Update README with Latest Blog Posts
+name: Update README with Blog Posts
 
 on:
   schedule:
-    - cron: '0 0 * * 0'  # 每周日凌晨运行
-  workflow_dispatch:    # 支持手动触发
+    - cron: '0 20 * * *'
+  workflow_dispatch:
 
 jobs:
-  update-readme:
+  update_readme:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Update README with latest blog posts
-        id: update_blog
+      - name: Run blog post workflow magic
         uses: gautamkrishnar/blog-post-workflow@master
         with:
           feed_list: "https://blog.moontung.top/index.xml"
@@ -24,19 +23,19 @@ jobs:
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
 
-      - name: Commit changes
+      - name: Check for changes
+        id: check_changes
         run: |
-          if [ -n "$(git status --porcelain)" ]; then
-            git add README.md
-            git commit -m "Update README with latest blog posts"
+          if [ -n "$(git status --porcelain README.md)" ]; then
+            echo "hasChange=true" >> $GITHUB_OUTPUT
           else
-            echo "No changes detected. Skipping."
-            exit 0
+            echo "hasChange=false" >> $GITHUB_OUTPUT
           fi
 
       - name: Push changes
         env:
-          SHEETUNG_UPDATE_TOKEN: ${{ secrets.SHEETUNG_UPDATE_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        if: ${{ steps.check_changes.outputs.hasChange == 'true' }}
         run: |
-          git remote set-url origin https://x-access-token:${SHEETUNG_UPDATE_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
           git push origin HEAD
