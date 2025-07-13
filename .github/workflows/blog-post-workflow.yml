@@ -19,21 +19,24 @@ jobs:
           feed_list: "https://blog.moontung.top/index.xml"
           max_post_count: "4"
 
-      - name: Commit README.md changes
+      - name: Configure Git
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+      - name: Commit changes
+        run: |
           if [ -n "$(git status --porcelain)" ]; then
             git add README.md
             git commit -m "Update README with latest blog posts"
           else
-            echo "No changes to commit."
+            echo "No changes detected. Skipping."
             exit 0
           fi
 
       - name: Push changes
-        uses: ad-m/github-push-action@v0.4.1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+          git push origin HEAD
