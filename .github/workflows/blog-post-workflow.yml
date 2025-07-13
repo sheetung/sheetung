@@ -15,7 +15,7 @@ jobs:
               uses: gautamkrishnar/blog-post-workflow@master
               with: 
                 max_post_count: "4"
-                feed_list: "https://moontung.top/feed/"
+                feed_list: "https://blog.moontung.top/index.xml"
 
             - name: Commit changes if any
               run: |
