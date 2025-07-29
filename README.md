@@ -8,6 +8,7 @@
 
 ### Blogs posts
 <!-- BLOG-POST-LIST:START -->
+- [虚拟机Ubuntu20配置px4相关环境](https://sheetung.github.io/ubt20_px4/)
 - [【无人机】鲁班猫Cat5V2与PX4飞控的通信篇](https://sheetung.github.io/lubancat_px4uart/)
 - [GIT使用教程 通关版](https://sheetung.github.io/git_use/)
 - [Hugo：零成本搭建一个带有评论和搜索系统的静态博客](https://sheetung.github.io/build_hugo_blog/)
