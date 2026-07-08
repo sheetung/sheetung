@@ -1,7 +1,7 @@
 <h1 align="center">Hi 👋, I'm sheetung</h1>
 <h3 align="center">A graduate student who works overtime everyday</h3>
 
-- 🌱 I’m currently learning **c++, ROS**
+- 🌱 I’m currently learning **c++, ROS2**
 
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=sheetung&show_icons=true&locale=en" alt="sheetung" /></p>
 
