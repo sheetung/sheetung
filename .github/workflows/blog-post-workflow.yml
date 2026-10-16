@@ -15,7 +15,7 @@ jobs:
       - name: Run blog post workflow magic
         uses: gautamkrishnar/blog-post-workflow@master
         with:
-          feed_list: "https://blog.moontung.top/index.xml"
+          feed_list: "https://092399.xyz/index.xml"
           max_post_count: "4"
 
       - name: Configure Git
