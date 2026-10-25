@@ -8,10 +8,10 @@
 
 ### Blogs posts
 <!-- BLOG-POST-LIST:START -->
-- [Markdown 基本语法](https://sheetung.github.io/markdown-basics/)
-- [Markdown 扩展语法](https://sheetung.github.io/markdown-extended/)
-- [Codex 帮我写了个 Go 版 Windows 久坐提醒工具：Stand Reminder](https://sheetung.github.io/codex-go-windows-stand-reminder/)
-- [Ubuntu系统使用openclaw发送截图黑屏解决办法](https://sheetung.github.io/Ubuntu%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8openclaw%E5%8F%91%E9%80%81%E6%88%AA%E5%9B%BE%E9%BB%91%E5%B1%8F%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/)
+- [【AI】在 Windows 与 Ubuntu 上用于四旋翼强化学习的仿真环境深度调研](https://092399.xyz/quad-rl-sim-survey/)
+- [全网最简单的华为 3.98 彩显墨水屏使用](https://092399.xyz/huaweier-ink-screen/)
+- [Markdown 基本语法](https://092399.xyz/markdown-basics/)
+- [Markdown 扩展语法](https://092399.xyz/markdown-extended/)
 <!-- BLOG-POST-LIST:END -->
 
 <h3 align="left">Connect with me:
